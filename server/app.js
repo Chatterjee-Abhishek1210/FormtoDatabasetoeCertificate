@@ -51,9 +51,9 @@ function createPDF(name, callback) {
         .fillColor('black')
         .text(
             name,
-            1000 - 200, // Horizontal position (centered horizontally, adjusted by 200 for offset)
-            720 - 50,   // Vertical position (centered vertically, adjusted by font size)
-            { align: 'center', width: 443 } // Width to limit text wrapping
+            1000 - 250, // Horizontal position (centered horizontally, adjusted by 200 for offset)
+            720 - 30,   // Vertical position (centered vertically, adjusted by font size)
+            { align: 'center', width: 500 } // Width to limit text wrapping
         );
 
     // Finalize the PDF and end the stream
