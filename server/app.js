@@ -31,8 +31,8 @@ const Data = mongoose.model('Data', dataSchema);
 // Function to create PDF certificate
 function createPDF(name, callback) {
     const doc = new PDFDocument({
-        size: [2000, 1414], // Ensure proper page size
-        margin: 0, // Remove margins for a full-page background
+        size: [2000, 1414], 
+        margin: 0, 
     });
 
     const filePath = path.join(__dirname, 'public', `${name}_certificate.pdf`);
@@ -51,15 +51,15 @@ function createPDF(name, callback) {
         .fillColor('black')
         .text(
             name,
-            1000 - 250, // Horizontal position (centered horizontally, adjusted by 200 for offset)
-            720 - 30,   // Vertical position (centered vertically, adjusted by font size)
+            1000 - 250, // Horizontal position 
+            720 - 30,   // Vertical position 
             { align: 'center', width: 500 } // Width to limit text wrapping
         );
 
-    // Finalize the PDF and end the stream
+    
     doc.end();
 
-    // Wait for the stream to finish
+   
     stream.on('finish', () => callback(null, filePath));
     stream.on('error', (error) => callback(error, null));
 }
@@ -83,13 +83,7 @@ app.post('/submit', async (req, res) => {
                 return;
             }
 
-            // Ensure the file is ready for download
-            // res.download(pdfPath, (err) => {
-            //     if (err) {
-            //         console.error('Error downloading the PDF:', err);
-            //         res.status(500).send('Error downloading the file');
-            //     }
-            // });
+            
             res.download(pdfPath, `${name}_certificate.pdf`, (err) => {
                 if (err) {
                     console.error('Error downloading the PDF:', err);
