@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public')); // Serve static files from the public directory
+app.use(express.static('public')); 
 
 // MongoDB connection
 mongoose.connect('mongodb://localhost:27017/certificateDB', {
@@ -51,8 +51,8 @@ function createPDF(name, callback) {
         .fillColor('black')
         .text(
             name,
-            1000 - 250, // Horizontal position 
-            720 - 30,   // Vertical position 
+            750, // Horizontal position 
+            780,   // Vertical position 
             { align: 'center', width: 500 } // Width to limit text wrapping
         );
 
