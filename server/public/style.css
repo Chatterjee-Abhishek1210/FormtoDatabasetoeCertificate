@@ -12,10 +12,10 @@
 }
 
 :root {
-  --bg-color: #040303;
-  --primary-color: #13f9f9;
-  --secondary-color: #07d6d6;
-  --text-color: #333;
+  --bg-color: #151515;
+  --primary-color: #7d33d6;
+  --secondary-color: #ffffff;
+  --text-color: #ffffff;
 }
 
 *::selection {
@@ -41,7 +41,7 @@ form {
   max-width: 50rem;
   margin: 0 auto;
   padding: 3rem;
-  background: #67b8eb;
+  background: #26054e;
   border-radius: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -78,6 +78,7 @@ form input[type="submit"] {
 
 form input[type="submit"]:hover {
   background: var(--secondary-color);
+  -webkit-text-fill-color: #000000;
 }
 
 @media (max-width: 768px) {
